@@ -43,12 +43,12 @@ export class WeatherService {
   }
 
   getWeatherByCoordinates(lat: number, lon: number) {
-    let apiUrl = 'http://api.weatherapi.com/v1/forecast.json?days=5';
+    let apiUrl = 'https://api.weatherapi.com/v1/forecast.json?days=5';
     return this.http.get(`${apiUrl}&q=${lat},${lon}&key=${this.apiKey}`);
   }
 
   getWeatherByCity(cityName: string) {
-    let apiUrl = 'http://api.weatherapi.com/v1/forecast.json?days=5';
+    let apiUrl = 'https://api.weatherapi.com/v1/forecast.json?days=5';
     return this.http.get(`${apiUrl}&q=${cityName}&key=${this.apiKey}`);
   }
 }
