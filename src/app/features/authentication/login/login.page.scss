@@ -1,0 +1,17 @@
+.page-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full viewport height */
+  background-color: #6a5acd;
+}
+
+ion-card {
+  width: 100%;
+  max-width: 400px; /* Set a max width for the card */
+  padding: 20px;
+}
+
+.cursor {
+  cursor: pointer;
+}

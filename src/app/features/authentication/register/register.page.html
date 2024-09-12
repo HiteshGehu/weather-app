@@ -1,0 +1,46 @@
+<ion-content>
+  <ion-grid>
+    <ion-row class="ion-justify-content-center ion-margin-top">
+      <ion-col size="12" size-md="6" size-lg="4">
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title class="ion-text-center">Register</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <form (ngSubmit)="register()">
+              <ion-item>
+                <ion-input
+                  label="Email"
+                  labelPlacement="floating"
+                  [(ngModel)]="email"
+                  type="email"
+                  name="email"
+                ></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-input
+                  label="Password"
+                  labelPlacement="floating"
+                  [(ngModel)]="password"
+                  type="password"
+                  name="password"
+                ></ion-input>
+              </ion-item>
+              <ion-button expand="full" color="primary" type="submit"
+                >Register</ion-button
+              >
+            </form>
+            <ion-row class="ion-margin-top ion-justify-content-center">
+              <ion-col size="12">
+                <ion-router-link routerLink="/login" class="ion-text-center"
+                  >Have an account?
+                  <span class="ion-text-danger">Login</span></ion-router-link
+                >
+              </ion-col>
+            </ion-row>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

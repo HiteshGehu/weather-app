@@ -1,0 +1,76 @@
+<ion-content *ngIf="dataPresent">
+  <ion-item class="ion-padding" lines="none">
+    <ion-label class="ion-text-center"
+      >{{ weatherData?.location.name }}, {{ weatherData?.location.region }},
+      {{ weatherData?.location.country }}</ion-label
+    >
+  </ion-item>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Weather Details</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item>
+        <ion-label>
+          <strong class="temperature">Temperature:</strong>
+        </ion-label>
+        <ion-note slot="end">{{ weatherData?.current.temp_c }} °C</ion-note>
+      </ion-item>
+      <ion-item>
+        <ion-label>
+          <strong class="humidity">Humidity:</strong>
+        </ion-label>
+        <ion-note slot="end">{{ weatherData?.current.humidity }}%</ion-note>
+      </ion-item>
+      <ion-item>
+        <ion-label>
+          <strong class="wind-speed">Wind Speed:</strong>
+        </ion-label>
+        <ion-note slot="end">{{ weatherData?.current.wind_mph }} m/s</ion-note>
+      </ion-item>
+      <ion-item>
+        <ion-label>
+          <strong class="description">Description:</strong>
+        </ion-label>
+        <ion-note slot="end">{{
+          weatherData?.current.condition.text
+        }}</ion-note>
+        <ion-avatar>
+          <img [src]="weatherData?.current.condition.icon" alt="weather icon" />
+        </ion-avatar>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-header class="ion-padding ion-text-center"
+    ><h3>3-Day Forecast</h3></ion-header
+  >
+  <ion-grid>
+    <ion-row>
+      <ion-col
+        size-xs="12"
+        offset-xs="0"
+        size-sm="8"
+        offset-sm="2"
+        *ngFor="let day of forecast"
+      >
+        <ion-card>
+          <ion-card-content>
+            <ion-item lines="none">
+              <ion-label>
+                <strong>{{ day.date }}</strong>
+                <p class="min-temp">Min Temp: {{ day.day.mintemp_c }}°C</p>
+                <p class="max-temp">Max Temp: {{ day.day.maxtemp_c }}°C</p>
+                <p class="condition">Condition: {{ day.day.condition.text }}</p>
+                <ion-avatar>
+                  <img [src]="day.day.condition.icon" alt="weather icon" />
+                </ion-avatar>
+              </ion-label>
+            </ion-item>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

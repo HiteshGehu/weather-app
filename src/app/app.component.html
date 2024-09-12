@@ -1,0 +1,33 @@
+<ion-app>
+  <ion-menu side="start" contentId="main-content">
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>Weather App</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content class="ion-padding">
+      <ion-list>
+        <ion-menu-toggle>
+          <ion-item lines="none" routerLink="/home">
+            <ion-icon name="sunny" slot="start"></ion-icon>
+            <ion-label>Local Weather Details</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+        <ion-menu-toggle>
+          <ion-item lines="none" routerLink="/search-weather">
+            <ion-icon name="search" slot="start"></ion-icon>
+            <ion-label>Search Weather</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+        <ion-menu-toggle>
+          <ion-item lines="none" routerLink="/favourites">
+            <ion-icon name="boat-outline" slot="start"></ion-icon>
+            <ion-label>Favourite Locations</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+  <div id="main-content"></div>
+  <ion-router-outlet main></ion-router-outlet>
+</ion-app>
